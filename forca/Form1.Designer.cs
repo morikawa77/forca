@@ -93,15 +93,16 @@
             this.palavra_tb.Location = new System.Drawing.Point(614, 59);
             this.palavra_tb.Name = "palavra_tb";
             this.palavra_tb.Size = new System.Drawing.Size(323, 38);
-            this.palavra_tb.TabIndex = 4;
-            this.palavra_tb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.palavra_tb_KeyUp);
+            this.palavra_tb.TabIndex = 1;
+            this.palavra_tb.Enter += new System.EventHandler(this.palavra_tb_Enter);
             // 
             // btn_salvar
             // 
+            this.btn_salvar.CausesValidation = false;
             this.btn_salvar.Location = new System.Drawing.Point(614, 103);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(323, 41);
-            this.btn_salvar.TabIndex = 5;
+            this.btn_salvar.TabIndex = 2;
             this.btn_salvar.Text = "Salvar";
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
@@ -111,7 +112,7 @@
             this.tentar_btn.Location = new System.Drawing.Point(614, 280);
             this.tentar_btn.Name = "tentar_btn";
             this.tentar_btn.Size = new System.Drawing.Size(323, 41);
-            this.tentar_btn.TabIndex = 8;
+            this.tentar_btn.TabIndex = 4;
             this.tentar_btn.Text = "Tentar";
             this.tentar_btn.UseVisualStyleBackColor = true;
             this.tentar_btn.Click += new System.EventHandler(this.tentar_btn_Click);
@@ -122,7 +123,8 @@
             this.letra_tb.Location = new System.Drawing.Point(614, 236);
             this.letra_tb.Name = "letra_tb";
             this.letra_tb.Size = new System.Drawing.Size(323, 38);
-            this.letra_tb.TabIndex = 7;
+            this.letra_tb.TabIndex = 3;
+            this.letra_tb.Enter += new System.EventHandler(this.letra_tb_Enter);
             // 
             // label4
             // 
@@ -140,7 +142,7 @@
             this.novo_jogo_btn.Location = new System.Drawing.Point(614, 669);
             this.novo_jogo_btn.Name = "novo_jogo_btn";
             this.novo_jogo_btn.Size = new System.Drawing.Size(323, 41);
-            this.novo_jogo_btn.TabIndex = 10;
+            this.novo_jogo_btn.TabIndex = 7;
             this.novo_jogo_btn.Text = "Novo jogo";
             this.novo_jogo_btn.UseVisualStyleBackColor = true;
             this.novo_jogo_btn.Click += new System.EventHandler(this.novo_jogo_btn_Click);
@@ -171,7 +173,7 @@
             this.tentar_palavra_btn.Location = new System.Drawing.Point(616, 437);
             this.tentar_palavra_btn.Name = "tentar_palavra_btn";
             this.tentar_palavra_btn.Size = new System.Drawing.Size(323, 41);
-            this.tentar_palavra_btn.TabIndex = 14;
+            this.tentar_palavra_btn.TabIndex = 6;
             this.tentar_palavra_btn.Text = "Tentar";
             this.tentar_palavra_btn.UseVisualStyleBackColor = true;
             this.tentar_palavra_btn.Click += new System.EventHandler(this.tentar_palavra_btn_Click);
@@ -182,7 +184,8 @@
             this.tentar_palavra_tb.Location = new System.Drawing.Point(616, 393);
             this.tentar_palavra_tb.Name = "tentar_palavra_tb";
             this.tentar_palavra_tb.Size = new System.Drawing.Size(323, 38);
-            this.tentar_palavra_tb.TabIndex = 13;
+            this.tentar_palavra_tb.TabIndex = 5;
+            this.tentar_palavra_tb.Enter += new System.EventHandler(this.tentar_palavra_tb_Enter);
             // 
             // label6
             // 

@@ -28,7 +28,6 @@ namespace forca
             tentar_palavra_tb.Enabled = false;
             tentar_palavra_btn.Enabled = false;
             palavra_tb.PasswordChar = '*';
-
         }
         public void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -102,17 +101,37 @@ namespace forca
 
         }
       
-        private void palavra_tb_KeyUp(object sender, KeyEventArgs e)
+        
+
+        private void palavra_tb_Enter(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(palavra_tb.Text))
+            if (!String.IsNullOrEmpty(palavra_tb.Text))
             {
                 btn_salvar.Enabled = true;
             }
-            
+        }
+         
+        private void letra_tb_Enter(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(letra_tb.Text))
+            {
+                tentar_btn.Enabled = true;
+            }
+        }
+
+        private void tentar_palavra_tb_Enter(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(tentar_palavra_tb.Text))
+            {
+                tentar_palavra_btn.Enabled = true;
+            }
         }
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
+            // NAO FUNCIONA DESABILITAR O BOTAO
+            // btn_salvar.Enabled = false;
+
             palavra = palavra_tb.Text;
             
             palavra_tb.Enabled = false;
@@ -133,14 +152,20 @@ namespace forca
 
             resultadoLetras = resultado_label.Text.ToCharArray();
 
+            // Habilita textboxes
             letra_tb.Enabled = true;
-            tentar_btn.Enabled = true;
             tentar_palavra_tb.Enabled = true;
-            tentar_palavra_btn.Enabled = true;
+            tentar_btn.Enabled = false;
+            tentar_palavra_btn.Enabled = false;
         }
 
         private void tentar_btn_Click(object sender, EventArgs e)
         {
+            // NAO FUNCIONA TROCA DE FOCUS
+            // SendKeys.Send("+{TAB}");
+            // letra_tb.Select();
+            // letra_tb.Focus();
+
             // Joga a letra em um char
             letra = letra_tb.Text[0];
             letra_tb.Text = "";
@@ -176,6 +201,10 @@ namespace forca
             {
                 tentativas--;
                 pictureBox1.Refresh();
+                // NAO FUNCIONA TROCA DE FOCUS
+                // SendKeys.Send("+{TAB}");
+                // letra_tb.Select();
+                // letra_tb.Focus();
             }
             else
             {
@@ -184,15 +213,17 @@ namespace forca
                     resultado_label.Text = palavra;
                     venceu();
                 }
+                else
+                {
+                    // NAO FUNCIONA TROCA DE FOCUS
+                    // SendKeys.Send("+{TAB}");
+                    // letra_tb.Select();
+                    // letra_tb.Focus();
+                }
             }
             
 
         }
-        private void novo_jogo_btn_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
         private void tentar_palavra_btn_Click(object sender, EventArgs e)
         {
             if (tentar_palavra_tb.Text == palavra)
@@ -204,6 +235,10 @@ namespace forca
             {
                 tentativas--;
                 pictureBox1.Refresh();
+                // NAO FUNCIONA TROCA DE FOCUS
+                //SendKeys.Send("+{TAB}");
+                //tentar_palavra_tb.Select();
+                //tentar_palavra_tb.Focus();
             }
         }
 
@@ -227,6 +262,11 @@ namespace forca
             tentar_palavra_tb.Enabled = false;
             tentar_palavra_btn.Enabled = false;
             resultado.Text = "Você perdeu, deseja tentar novamente?";
+        }
+
+        private void novo_jogo_btn_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
