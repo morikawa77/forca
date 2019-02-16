@@ -103,15 +103,16 @@ namespace forca
       
         
 
-        private void palavra_tb_Enter(object sender, EventArgs e)
+        private void palavra_tb_KeyUp(object sender, KeyEventArgs e)
         {
             if (!String.IsNullOrEmpty(palavra_tb.Text))
             {
                 btn_salvar.Enabled = true;
             }
         }
-         
-        private void letra_tb_Enter(object sender, EventArgs e)
+
+
+        private void letra_tb_KeyUp(object sender, KeyEventArgs e)
         {
             if (!String.IsNullOrEmpty(letra_tb.Text))
             {
@@ -119,7 +120,7 @@ namespace forca
             }
         }
 
-        private void tentar_palavra_tb_Enter(object sender, EventArgs e)
+        private void tentar_palavra_tb_KeyUp(object sender, KeyEventArgs e)
         {
             if (!String.IsNullOrEmpty(tentar_palavra_tb.Text))
             {
@@ -133,8 +134,19 @@ namespace forca
             // btn_salvar.Enabled = false;
 
             palavra = palavra_tb.Text;
-            
+
+            // Desabilita o campo de texto
             palavra_tb.Enabled = false;
+
+            // Habilita e envia o focus pro campo de texto char
+            letra_tb.Enabled = true;
+            letra_tb.Focus();
+
+            // Desabilita o botao
+            btn_salvar.Enabled = false;
+
+            
+
             // printa palavra no resultado para testes
             // resultado_label.Text = palavra;
 
@@ -153,7 +165,7 @@ namespace forca
             resultadoLetras = resultado_label.Text.ToCharArray();
 
             // Habilita textboxes
-            letra_tb.Enabled = true;
+            
             tentar_palavra_tb.Enabled = true;
             tentar_btn.Enabled = false;
             tentar_palavra_btn.Enabled = false;
@@ -161,14 +173,18 @@ namespace forca
 
         private void tentar_btn_Click(object sender, EventArgs e)
         {
-            // NAO FUNCIONA TROCA DE FOCUS
-            // SendKeys.Send("+{TAB}");
-            // letra_tb.Select();
-            // letra_tb.Focus();
-
             // Joga a letra em um char
             letra = letra_tb.Text[0];
+
+            // Esvazia o campo de texto
             letra_tb.Text = "";
+
+            // Desabilita o botao
+            tentar_btn.Enabled = false;
+
+            // Volta o focus pro campo de texto
+            letra_tb.Focus();
+            
             // Printa letra no resultado para testes
             // resultado_label.Text = letra.ToString();
 
@@ -201,10 +217,6 @@ namespace forca
             {
                 tentativas--;
                 pictureBox1.Refresh();
-                // NAO FUNCIONA TROCA DE FOCUS
-                // SendKeys.Send("+{TAB}");
-                // letra_tb.Select();
-                // letra_tb.Focus();
             }
             else
             {
@@ -213,19 +225,14 @@ namespace forca
                     resultado_label.Text = palavra;
                     venceu();
                 }
-                else
-                {
-                    // NAO FUNCIONA TROCA DE FOCUS
-                    // SendKeys.Send("+{TAB}");
-                    // letra_tb.Select();
-                    // letra_tb.Focus();
-                }
             }
             
 
         }
         private void tentar_palavra_btn_Click(object sender, EventArgs e)
         {
+
+
             if (tentar_palavra_tb.Text == palavra)
             {
                 resultado_label.Text = palavra;
@@ -235,10 +242,10 @@ namespace forca
             {
                 tentativas--;
                 pictureBox1.Refresh();
-                // NAO FUNCIONA TROCA DE FOCUS
-                //SendKeys.Send("+{TAB}");
-                //tentar_palavra_tb.Select();
-                //tentar_palavra_tb.Focus();
+
+                tentar_palavra_tb.Text = "";
+                tentar_palavra_tb.Focus();
+                tentar_palavra_btn.Enabled = false;
             }
         }
 
@@ -268,5 +275,7 @@ namespace forca
         {
             Application.Restart();
         }
+
+        
     }
 }

@@ -95,7 +95,7 @@
             this.palavra_tb.Name = "palavra_tb";
             this.palavra_tb.Size = new System.Drawing.Size(323, 38);
             this.palavra_tb.TabIndex = 1;
-            this.palavra_tb.Enter += new System.EventHandler(this.palavra_tb_Enter);
+            this.palavra_tb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.palavra_tb_KeyUp);
             // 
             // btn_salvar
             // 
@@ -125,7 +125,7 @@
             this.letra_tb.Name = "letra_tb";
             this.letra_tb.Size = new System.Drawing.Size(323, 38);
             this.letra_tb.TabIndex = 3;
-            this.letra_tb.Enter += new System.EventHandler(this.letra_tb_Enter);
+            this.letra_tb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.letra_tb_KeyUp);
             // 
             // label4
             // 
@@ -186,7 +186,7 @@
             this.tentar_palavra_tb.Name = "tentar_palavra_tb";
             this.tentar_palavra_tb.Size = new System.Drawing.Size(323, 38);
             this.tentar_palavra_tb.TabIndex = 5;
-            this.tentar_palavra_tb.Enter += new System.EventHandler(this.tentar_palavra_tb_Enter);
+            this.tentar_palavra_tb.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tentar_palavra_tb_KeyUp);
             // 
             // label6
             // 
