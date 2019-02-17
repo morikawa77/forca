@@ -54,6 +54,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Location = new System.Drawing.Point(16, 57);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(519, 608);
@@ -64,6 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
@@ -83,6 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(610, 32);
             this.label3.Name = "label3";
@@ -133,6 +136,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(610, 209);
             this.label4.Name = "label4";
@@ -154,6 +158,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(610, 598);
             this.label5.Name = "label5";
@@ -166,7 +171,7 @@
             // 
             this.resultado_label.AutoSize = true;
             this.resultado_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultado_label.Location = new System.Drawing.Point(610, 632);
+            this.resultado_label.Location = new System.Drawing.Point(620, 632);
             this.resultado_label.Name = "resultado_label";
             this.resultado_label.Size = new System.Drawing.Size(0, 33);
             this.resultado_label.TabIndex = 11;
@@ -194,6 +199,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(610, 386);
             this.label6.Name = "label6";
@@ -215,6 +221,7 @@
             // qtdLetras_label
             // 
             this.qtdLetras_label.AutoSize = true;
+            this.qtdLetras_label.BackColor = System.Drawing.Color.White;
             this.qtdLetras_label.Location = new System.Drawing.Point(819, 604);
             this.qtdLetras_label.Name = "qtdLetras_label";
             this.qtdLetras_label.Size = new System.Drawing.Size(118, 13);
@@ -225,7 +232,6 @@
             // letras_tentadas_tb
             // 
             this.letras_tentadas_tb.AcceptsReturn = true;
-            this.letras_tentadas_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.letras_tentadas_tb.Location = new System.Drawing.Point(616, 334);
             this.letras_tentadas_tb.Multiline = true;
             this.letras_tentadas_tb.Name = "letras_tentadas_tb";
@@ -248,6 +254,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.palavras_tentadas_tb);
             this.Controls.Add(this.letras_tentadas_tb);
@@ -269,6 +277,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "Forca";
             this.Text = "Jogo da Forca";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
