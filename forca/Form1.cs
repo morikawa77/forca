@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -15,8 +16,9 @@ namespace forca
         public int tentativas = 6;
         public int qtdLetras = 0;
         public char[] resultadoLetras;
+        public string letrasTentadas;
+        public string palavrasTentadas;
 
-        
         public Forca()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace forca
             tentar_palavra_tb.Enabled = false;
             tentar_palavra_btn.Enabled = false;
             palavra_tb.PasswordChar = '*';
+            qtdLetras_label.Text = "";
         }
         public void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -130,9 +133,6 @@ namespace forca
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
-            // NAO FUNCIONA DESABILITAR O BOTAO
-            // btn_salvar.Enabled = false;
-
             palavra = palavra_tb.Text;
 
             // Desabilita o campo de texto
@@ -145,27 +145,31 @@ namespace forca
             // Desabilita o botao
             btn_salvar.Enabled = false;
 
-            
-
             // printa palavra no resultado para testes
             // resultado_label.Text = palavra;
 
             // transforma a palavra em um array de chars
             charPalavra = palavra.ToCharArray();
+
             // Quantidade de letras da string
             qtdLetras = charPalavra.Length;
+
+            // Printa a quantidade de letras da palavra
+            qtdLetras_label.Text = $"A palavra tem {qtdLetras} letras.";
+
             // printa o tamanho do array para testes
             // resultado_label.Text = qtdLetras.ToString();
 
+            // monta a palavra so com asteriscos
             for (int i = 0; i < qtdLetras; i++)
             {
                 resultado_label.Text = resultado_label.Text + "*";
             }
 
+            // printa a palavra so com asteriscos
             resultadoLetras = resultado_label.Text.ToCharArray();
 
-            // Habilita textboxes
-            
+            // Habilita textbox da palavra e desativa os botoes
             tentar_palavra_tb.Enabled = true;
             tentar_btn.Enabled = false;
             tentar_palavra_btn.Enabled = false;
@@ -175,6 +179,21 @@ namespace forca
         {
             // Joga a letra em um char
             letra = letra_tb.Text[0];
+
+            // Verifica se  e a primeira vez a passar aqui
+            if (letras_tentadas_tb.Text == "")
+            {
+                // Adiciona a letra as letras tentadas 
+                letrasTentadas = "Letras tentadas: \r\n" + letra_tb.Text;
+            }
+            else
+            {
+                // Adiciona a letra as letras tentadas 
+                letrasTentadas = letrasTentadas + ", " + letra_tb.Text;
+            }
+
+            // Printa as letras tentadas
+            letras_tentadas_tb.Text = letrasTentadas;
 
             // Esvazia o campo de texto
             letra_tb.Text = "";
@@ -231,7 +250,20 @@ namespace forca
         }
         private void tentar_palavra_btn_Click(object sender, EventArgs e)
         {
+            // Verifica se e a primeira vez a passar aqui
+            if (palavras_tentadas_tb.Text == "")
+            {
+                // Adiciona a palavra as palavras tentadas 
+                palavrasTentadas = "Palavras tentadas: \r\n" + tentar_palavra_tb.Text;
+            }
+            else
+            {
+                // Adiciona a palavra as palavras tentadas 
+                palavrasTentadas = palavrasTentadas + ", " + tentar_palavra_tb.Text;
+            }
 
+            // Printa as palavras tentadas
+            palavras_tentadas_tb.Text = palavrasTentadas;
 
             if (tentar_palavra_tb.Text == palavra)
             {

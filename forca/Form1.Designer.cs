@@ -46,6 +46,9 @@
             this.tentar_palavra_tb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.resultado = new System.Windows.Forms.Label();
+            this.qtdLetras_label = new System.Windows.Forms.Label();
+            this.letras_tentadas_tb = new System.Windows.Forms.TextBox();
+            this.palavras_tentadas_tb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,7 +174,7 @@
             // 
             // tentar_palavra_btn
             // 
-            this.tentar_palavra_btn.Location = new System.Drawing.Point(616, 437);
+            this.tentar_palavra_btn.Location = new System.Drawing.Point(614, 457);
             this.tentar_palavra_btn.Name = "tentar_palavra_btn";
             this.tentar_palavra_btn.Size = new System.Drawing.Size(323, 41);
             this.tentar_palavra_btn.TabIndex = 6;
@@ -182,7 +185,7 @@
             // tentar_palavra_tb
             // 
             this.tentar_palavra_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tentar_palavra_tb.Location = new System.Drawing.Point(616, 393);
+            this.tentar_palavra_tb.Location = new System.Drawing.Point(614, 413);
             this.tentar_palavra_tb.Name = "tentar_palavra_tb";
             this.tentar_palavra_tb.Size = new System.Drawing.Size(323, 38);
             this.tentar_palavra_tb.TabIndex = 5;
@@ -192,7 +195,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(612, 366);
+            this.label6.Location = new System.Drawing.Point(610, 386);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 24);
             this.label6.TabIndex = 12;
@@ -209,11 +212,46 @@
             this.resultado.Size = new System.Drawing.Size(0, 29);
             this.resultado.TabIndex = 15;
             // 
+            // qtdLetras_label
+            // 
+            this.qtdLetras_label.AutoSize = true;
+            this.qtdLetras_label.Location = new System.Drawing.Point(819, 604);
+            this.qtdLetras_label.Name = "qtdLetras_label";
+            this.qtdLetras_label.Size = new System.Drawing.Size(118, 13);
+            this.qtdLetras_label.TabIndex = 16;
+            this.qtdLetras_label.Text = "A palavra tem 17 letras.";
+            this.qtdLetras_label.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // letras_tentadas_tb
+            // 
+            this.letras_tentadas_tb.AcceptsReturn = true;
+            this.letras_tentadas_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.letras_tentadas_tb.Location = new System.Drawing.Point(616, 334);
+            this.letras_tentadas_tb.Multiline = true;
+            this.letras_tentadas_tb.Name = "letras_tentadas_tb";
+            this.letras_tentadas_tb.ReadOnly = true;
+            this.letras_tentadas_tb.Size = new System.Drawing.Size(321, 42);
+            this.letras_tentadas_tb.TabIndex = 18;
+            // 
+            // palavras_tentadas_tb
+            // 
+            this.palavras_tentadas_tb.AcceptsReturn = true;
+            this.palavras_tentadas_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.palavras_tentadas_tb.Location = new System.Drawing.Point(614, 512);
+            this.palavras_tentadas_tb.Multiline = true;
+            this.palavras_tentadas_tb.Name = "palavras_tentadas_tb";
+            this.palavras_tentadas_tb.ReadOnly = true;
+            this.palavras_tentadas_tb.Size = new System.Drawing.Size(321, 71);
+            this.palavras_tentadas_tb.TabIndex = 19;
+            // 
             // Forca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.palavras_tentadas_tb);
+            this.Controls.Add(this.letras_tentadas_tb);
+            this.Controls.Add(this.qtdLetras_label);
             this.Controls.Add(this.resultado);
             this.Controls.Add(this.tentar_palavra_btn);
             this.Controls.Add(this.tentar_palavra_tb);
@@ -258,6 +296,9 @@
         private System.Windows.Forms.TextBox tentar_palavra_tb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label resultado;
+        private System.Windows.Forms.Label qtdLetras_label;
+        private System.Windows.Forms.TextBox letras_tentadas_tb;
+        private System.Windows.Forms.TextBox palavras_tentadas_tb;
     }
 }
 
