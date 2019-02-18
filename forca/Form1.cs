@@ -203,11 +203,12 @@ namespace forca
 
             // Volta o focus pro campo de texto
             letra_tb.Focus();
-            
+
             // Printa letra no resultado para testes
             // resultado_label.Text = letra.ToString();
 
             int index = 0;
+            bool encontrou = false;
 
             // procura o char na no array de chars da palavra
             for (int i = 0; i < charPalavra.Length; i++)
@@ -229,10 +230,13 @@ namespace forca
 
                     string s = new string(resultadoLetras);
                     resultado_label.Text = s;
+
+                    encontrou = true;
                 }
             }
 
-            if (index == 0)
+            
+            if (!encontrou)
             {
                 tentativas--;
                 pictureBox1.Refresh();
@@ -245,7 +249,6 @@ namespace forca
                     venceu();
                 }
             }
-            
 
         }
         private void tentar_palavra_btn_Click(object sender, EventArgs e)
