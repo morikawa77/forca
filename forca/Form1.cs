@@ -320,8 +320,9 @@ namespace forca
         {
             try
             {
+                // 20% de chance de aparecer
                 Random rnd = new Random();
-                int intRandom = rnd.Next(0, 5);
+                int intRandom = rnd.Next(0, 4);
 
                 if (intRandom == 1)
                 {
