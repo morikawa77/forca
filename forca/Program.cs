@@ -16,7 +16,7 @@ namespace forca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forca());
+            Application.Run(new SplashScreen());
         }
     }
 }
