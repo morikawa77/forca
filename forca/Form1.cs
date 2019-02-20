@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace forca
@@ -31,6 +32,7 @@ namespace forca
             tentar_palavra_btn.Enabled = false;
             palavra_tb.PasswordChar = '*';
             qtdLetras_label.Text = "";
+            imgFaustao.Visible = false;
         }
         public void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -239,7 +241,9 @@ namespace forca
             if (!encontrou)
             {
                 tentativas--;
+                errou();
                 pictureBox1.Refresh();
+                
             }
             else
             {
@@ -277,6 +281,7 @@ namespace forca
             {
                 tentativas--;
                 pictureBox1.Refresh();
+                errou();
 
                 tentar_palavra_tb.Text = "";
                 tentar_palavra_tb.Focus();
@@ -309,6 +314,37 @@ namespace forca
         private void novo_jogo_btn_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        public void errou()
+        {
+            try
+            {
+                Random rnd = new Random();
+                int intRandom = rnd.Next(0, 5);
+
+                if (intRandom == 1)
+                {
+                    System.IO.Stream str = Properties.Resources.errou;
+                    System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+                    snd.Play();
+
+                    imgFaustao.Visible = true;
+                    Task.Run(() =>
+                    {
+                        Thread.Sleep(2000);
+                        this.Invoke(new Action(() =>
+                        {
+                            imgFaustao.Visible = false;
+                        }));
+                    });
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ": " + ex.StackTrace.ToString(),"Error");
+            }
         }
 
         

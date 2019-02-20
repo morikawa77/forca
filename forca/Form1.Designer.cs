@@ -49,7 +49,9 @@
             this.qtdLetras_label = new System.Windows.Forms.Label();
             this.letras_tentadas_tb = new System.Windows.Forms.TextBox();
             this.palavras_tentadas_tb = new System.Windows.Forms.TextBox();
+            this.imgFaustao = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFaustao)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -250,6 +252,16 @@
             this.palavras_tentadas_tb.Size = new System.Drawing.Size(321, 71);
             this.palavras_tentadas_tb.TabIndex = 19;
             // 
+            // imgFaustao
+            // 
+            this.imgFaustao.BackColor = System.Drawing.Color.Transparent;
+            this.imgFaustao.Image = ((System.Drawing.Image)(resources.GetObject("imgFaustao.Image")));
+            this.imgFaustao.Location = new System.Drawing.Point(0, 341);
+            this.imgFaustao.Name = "imgFaustao";
+            this.imgFaustao.Size = new System.Drawing.Size(600, 388);
+            this.imgFaustao.TabIndex = 20;
+            this.imgFaustao.TabStop = false;
+            // 
             // Forca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +269,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.imgFaustao);
             this.Controls.Add(this.palavras_tentadas_tb);
             this.Controls.Add(this.letras_tentadas_tb);
             this.Controls.Add(this.qtdLetras_label);
@@ -283,6 +296,7 @@
             this.Name = "Forca";
             this.Text = "Jogo da Forca";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFaustao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,6 +324,7 @@
         private System.Windows.Forms.Label qtdLetras_label;
         private System.Windows.Forms.TextBox letras_tentadas_tb;
         private System.Windows.Forms.TextBox palavras_tentadas_tb;
+        private System.Windows.Forms.PictureBox imgFaustao;
     }
 }
 
