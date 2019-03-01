@@ -110,7 +110,7 @@ namespace forca
 
         private void palavra_tb_KeyUp(object sender, KeyEventArgs e)
         {
-            if (!String.IsNullOrEmpty(palavra_tb.Text))
+            if (!String.IsNullOrWhiteSpace(palavra_tb.Text))
             {
                 btn_salvar.Enabled = true;
             }
@@ -348,6 +348,42 @@ namespace forca
             }
         }
 
-        
+        /*
+         * 
+         *              M E N U S
+         *  
+         *  
+         */
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*
+            new Forca().Show();
+            this.Hide();
+            */
+            Application.Restart();
+        }
+
+        private void abrirPlacarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO criar Placar form
+            // new Placar().Show();
+            this.Hide();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Close();
+            if (MessageBox.Show("Tem certeza que deseja sair?", "Sair", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void sobreOJogoDaForcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //open dialog about the game
+            MessageBox.Show("Jogo da Forca \n Desenvolvido por Reginaldo Morikawa");
+        }
     }
 }
