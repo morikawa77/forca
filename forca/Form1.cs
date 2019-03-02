@@ -357,17 +357,13 @@ namespace forca
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
-            new Forca().Show();
-            this.Hide();
-            */
             Application.Restart();
         }
 
         private void abrirPlacarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // TODO criar Placar form
-            // new Placar().Show();
+            new Placar().Show();
             this.Hide();
         }
 
